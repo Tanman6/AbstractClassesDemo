@@ -15,7 +15,26 @@ namespace ConsoleUI
              */
 
             #region Vehicles
+            var vehicles = new List<Vehicle>();
+            var car1 = new Car { Year = "2015", Make = "Volkswagen", Model = "Jetta", HasTrunk = true, Has4Wheels = true };
+            var motorcycle1 = new Motorcycle{ Year = "2010", Make = "Kawasaki", Model = "Ninja", HasSideCart = false };
+            Vehicle car2 = new Car { Year = "2016", Make = "Tesla", Model = "Model X", HasTrunk = true, Has4Wheels = true };
+            Vehicle motorcycle2 = new Motorcycle { Year = "2012", Make = "Honda", Model = "RCB1000", HasSideCart = false };
 
+            vehicles.Add(car1);
+            vehicles.Add(car2);
+            vehicles.Add(motorcycle1);
+            vehicles.Add(motorcycle2);
+
+            foreach (var item in vehicles)
+            {
+                Console.WriteLine($"Year: {item.Year}");
+                Console.WriteLine($"Make: {item.Make}");
+                Console.WriteLine($"Model: {item.Model}");
+                item.DriveAbstract();
+                item.DriveVirtual();
+                Console.WriteLine();
+            }
             /*
              * Create an abstract class called Vehicle
              * The vehicle class shall have three string properties Year, Make, and Model
